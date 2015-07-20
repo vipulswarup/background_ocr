@@ -1,5 +1,6 @@
 package com.eisenvault.ocrIntegration;
 
+import java.awt.image.BufferedImage;
 /**
     This file is part of the Tesseract Alfresco Integration written by
     Simon White.
@@ -21,7 +22,11 @@ package com.eisenvault.ocrIntegration;
  */
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import javax.imageio.ImageIO;
+
 import java.util.Date;
 
 
@@ -36,6 +41,8 @@ import org.alfresco.util.TempFileProvider;
 import org.alfresco.util.exec.RuntimeExec;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
 
 /**
  * Simple transformer, very heavily based upon the Alfresco-provided ImageMagick transformer, to allow for image->text
@@ -53,9 +60,9 @@ import org.apache.commons.logging.LogFactory;
  *
  *@author simon_DOT_white_AT_gmail_DOT_com
  */
-public class TesseractTransformWorker extends ContentTransformerHelper implements ContentTransformerWorker {
+public class PDF2PDFTesseractTransformWorker extends ContentTransformerHelper implements ContentTransformerWorker {
 
-    private static final Log logger = LogFactory.getLog(TesseractTransformWorker.class);
+    private static final Log logger = LogFactory.getLog(PDF2PDFTesseractTransformWorker.class);
 
     private static final String VAR_SOURCE = "source";
     private static final String VAR_TARGET = "target";
@@ -156,6 +163,99 @@ public class TesseractTransformWorker extends ContentTransformerHelper implement
 	        properties.put(VAR_SOURCE, sourceFile.getAbsolutePath());
 	        properties.put(VAR_TARGET, targetFile.getAbsolutePath());
 	         
+	       /**************************pdf conversion to tiff images and then saved at pdftoimages folder 	
+	        * 
+	        *  
+	      */
+	        
+	        try {
+	    
+			  			        String sourceDir = "/home/raghav_bhardwaj_eisenvault_com/Documents/"+field.getFilename().replaceAll("\\s",""); 
+			  			        String destinationDir = "/home/raghav_bhardwaj_eisenvault_com/Documents/pdftoimages/"; // converted images from pdf document are saved here
+
+			  			        File sourceFile = new File(sourceDir);
+			  			        File destinationFile = new File(destinationDir);
+			  			        if (!destinationFile.exists()) {
+			  			            destinationFile.mkdir();
+			  			            System.out.println("Folder Created -> "+ destinationFile.getAbsolutePath());
+			  			        }
+			  			        if (sourceFile.exists()) {
+			  			            System.out.println("Images copied to Folder: "+ destinationFile.getName());             
+			  			            PDDocument document = PDDocument.load(sourceDir);
+			  			            List<PDPage> list = document.getDocumentCatalog().getAllPages();
+			  			            System.out.println("Total files to be converted -> "+ list.size());
+
+			  			            String fileName = sourceFile.getName().replace(".pdf", "");             
+			  			            int pageNumber = 1;
+			  			            for (PDPage page : list) {
+			  			                BufferedImage image = page.convertToImage();
+			  			                File outputfile = new File(destinationDir + fileName +"_"+ pageNumber +".jpg");
+			  			                System.out.println("Image Created -> "+ outputfile.getName());
+			  			                ImageIO.write(image, "jpg", outputfile);
+			  			                pageNumber++;
+			  			            }
+			  			            document.close();
+			  			            System.out.println("Converted Images are saved at -> "+ destinationFile.getAbsolutePath());
+			  			        } else {
+			  			            System.err.println(sourceFile.getName() +" File not exists");
+			  			        }
+
+			  			    } catch (Exception e) {
+			  			        
+			  			    	e.printStackTrace();
+			  			        
+			  			           }
+			  			      
+				            
+				            
+				            
+				            /******** Now this command will generate the output Searchable Pdf ******/ 
+	        
+	    	String[] cmd={"/bin/sh","-c","pdftk /home/raghav_bhardwaj_eisenvault_com/Documents/pdftoimages/*.pdf cat output /home/raghav_bhardwaj_eisenvault_com/Documents/pdftoimages/merged.pdf"};
+
+	    	 
+	    	   Process p = Runtime.getRuntime().exec(cmd);
+
+			    try {
+					p.waitFor();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				            
+						     
+				            
+				            
+				            
+				            
+				            
+				            
+				            
+				            
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
 	        RuntimeExec.ExecutionResult result = executer.execute(properties, tesseractTimeout);
 	 
 	        //VS - tesseract auto appends .pdf -- this causes the file name to become XXXX.pdf.pdf
