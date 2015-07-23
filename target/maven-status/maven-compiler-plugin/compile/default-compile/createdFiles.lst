@@ -1,5 +1,2 @@
-com/eisenvault/ocrIntegration/demoamp/DemoComponent.class
-com/eisenvault/ocrIntegration/demoamp/Demo.class
-com/eisenvault/ocrIntegration/PDF2TIFFTesseractTransformWorker.class
-com/eisenvault/ocrIntegration/demoamp/HelloWorldWebScript.class
 com/eisenvault/ocrIntegration/TIFF2PDFTesseractTransformWorker.class
+com/eisenvault/ocrIntegration/PDF2PDFTesseractActionExecuter.class

@@ -21,9 +21,8 @@
 <beans>
 
     <!-- This is filtered by Maven at build time, so that module name is single sourced. -->
-    <import resource="classpath:alfresco/module/${project.artifactId}/context/pdf2tiff-transformation-context.xml" />
+    <import resource="classpath:alfresco/module/${project.artifactId}/context/pdf2pdf-transformation-context.xml" />
     <import resource="classpath:alfresco/module/${project.artifactId}/context/tiff2pdf-transformation-context.xml" />
     <import resource="classpath:alfresco/module/${project.artifactId}/context/bootstrap-context.xml" />
-	<import resource="classpath:alfresco/module/${project.artifactId}/context/webscript-context.xml" />
 
 </beans>
