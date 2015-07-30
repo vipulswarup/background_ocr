@@ -22,7 +22,6 @@
 
     <!-- This is filtered by Maven at build time, so that module name is single sourced. -->
     <import resource="classpath:alfresco/module/repo-amp/context/pdf2pdf-transformation-context.xml" />
-    <import resource="classpath:alfresco/module/repo-amp/context/tiff2pdf-transformation-context.xml" />
     <import resource="classpath:alfresco/module/repo-amp/context/bootstrap-context.xml" />
 
 </beans>

@@ -70,10 +70,11 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 	private static final String VAR_SOURCE = "source";
 	private static final String VAR_TARGET = "target";
 	private static final String NAME = "ocr-pdf";
-//	private static final String PARAM_DESTINATION_FOLDER = "destination-folder";
+	// private static final String PARAM_DESTINATION_FOLDER =
+	// "destination-folder";
 
 	private FileFolderService fileFolderService;
-	//private NodeService nodeService;
+	// private NodeService nodeService;
 	private CheckOutCheckInService checkOutCheckInService;
 
 	/**
@@ -158,26 +159,29 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 		}
 	}
 
-	 @Override
+	@Override
 	protected void addParameterDefinitions(List<ParameterDefinition> paramList) {
-	//	paramList.add(new ParameterDefinitionImpl(PARAM_DESTINATION_FOLDER,
-	//			DataTypeDefinition.NODE_REF, true,
-	//			getParamDisplayLabel(PARAM_DESTINATION_FOLDER)));
+		// paramList.add(new ParameterDefinitionImpl(PARAM_DESTINATION_FOLDER,
+		// DataTypeDefinition.NODE_REF, true,
+		// getParamDisplayLabel(PARAM_DESTINATION_FOLDER)));
 	}
 
 	public void executeImpl(Action ruleAction, NodeRef actionedUponNodeRef) {
-		
-		NodeRef workingNode=checkOutCheckInService.checkout(actionedUponNodeRef);
-		ContentReader reader = fileFolderService.getReader(workingNode);
-		 
+
 		try {
+
+			NodeRef workingNode = checkOutCheckInService
+					.checkout(actionedUponNodeRef);
+			ContentReader reader = fileFolderService.getReader(workingNode);
+
 			logger.debug("Beginning transform for "
 					+ reader.getContentData().getContentUrl());
 
 			String sourceMimetype = reader.getMimetype();
-			if (sourceMimetype.equalsIgnoreCase("application/pdf")) {
-				
-				
+
+			
+			if (sourceMimetype.equalsIgnoreCase("application/pdf") || sourceMimetype.equalsIgnoreCase("image/tiff") || sourceMimetype.equalsIgnoreCase("image/png")|| sourceMimetype.equalsIgnoreCase("image/jpeg")) {
+
 				String targetMimetype = "application/pdf";
 				String sourceExtension = mimetypeService
 						.getExtension(sourceMimetype);
@@ -217,22 +221,26 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 				logger.debug("Transform executed");
 				ContentWriter writer = fileFolderService.getWriter(workingNode);
 				writer.putContent(targetFile);
+				writer.setMimetype(targetMimetype);
+			
 				checkOutCheckInService.checkin(workingNode, null);
 
 				logger.info("Transform complete");
 			}
 		} catch (Exception e) {
 			logger.error("Exception during transform", e);
-			
+
 		}
 
 	}
 
-	public void setFileFolderService(FileFolderService fileFolderService){
-		this.fileFolderService=fileFolderService;
+	public void setFileFolderService(FileFolderService fileFolderService) {
+		this.fileFolderService = fileFolderService;
 	}
-	public void setCheckOutCheckInService(CheckOutCheckInService checkOutCheckinService){
-		this.checkOutCheckInService=checkOutCheckinService;
+
+	public void setCheckOutCheckInService(
+			CheckOutCheckInService checkOutCheckinService) {
+		this.checkOutCheckInService = checkOutCheckinService;
 	}
 
 }
