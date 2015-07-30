@@ -20,30 +20,33 @@ package com.eisenvault.ocrIntegration;
  along with the Integration.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.io.File;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.alfresco.repo.action.ParameterDefinitionImpl;
+import org.alfresco.model.ContentModel;
 import org.alfresco.repo.action.executer.ActionExecuterAbstractBase;
-import org.alfresco.service.ServiceRegistry;
+import org.alfresco.repo.version.VersionModel;
 import org.alfresco.service.cmr.action.Action;
 import org.alfresco.service.cmr.action.ParameterDefinition;
 import org.alfresco.service.cmr.coci.CheckOutCheckInService;
-import org.alfresco.service.cmr.dictionary.DataTypeDefinition;
 import org.alfresco.service.cmr.model.FileFolderService;
+import org.alfresco.service.cmr.repository.ContentData;
 import org.alfresco.service.cmr.repository.ContentIOException;
 import org.alfresco.service.cmr.repository.ContentReader;
 import org.alfresco.service.cmr.repository.ContentWriter;
 import org.alfresco.service.cmr.repository.MimetypeService;
 import org.alfresco.service.cmr.repository.NodeRef;
+import org.alfresco.service.cmr.repository.NodeService;
+import org.alfresco.service.cmr.version.Version;
+import org.alfresco.service.cmr.version.VersionType;
 import org.alfresco.util.TempFileProvider;
 import org.alfresco.util.exec.RuntimeExec;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import com.google.common.util.concurrent.Service;
 
 /**
  * Simple transformer, very heavily based upon the Alfresco-provided ImageMagick
@@ -74,7 +77,7 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 	// "destination-folder";
 
 	private FileFolderService fileFolderService;
-	// private NodeService nodeService;
+	private NodeService nodeService;
 	private CheckOutCheckInService checkOutCheckInService;
 
 	/**
@@ -170,19 +173,52 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 
 		try {
 
-			NodeRef workingNode = checkOutCheckInService
-					.checkout(actionedUponNodeRef);
-			ContentReader reader = fileFolderService.getReader(workingNode);
+			ContentData contentData = (ContentData) nodeService.getProperty(
+					actionedUponNodeRef, ContentModel.PROP_CONTENT);
+			String sourceMimetype = contentData.getMimetype();
+			String targetMimetype = "application/pdf";
 
-			logger.debug("Beginning transform for "
-					+ reader.getContentData().getContentUrl());
-
-			String sourceMimetype = reader.getMimetype();
-
+			Map<String, Serializable> versionProperties = new HashMap<String, Serializable>();
 			
-			if (sourceMimetype.equalsIgnoreCase("application/pdf") || sourceMimetype.equalsIgnoreCase("image/tiff") || sourceMimetype.equalsIgnoreCase("image/png")|| sourceMimetype.equalsIgnoreCase("image/jpeg")) {
+			versionProperties.put(VersionModel.PROP_VERSION_TYPE,
+					VersionType.MAJOR);
 
-				String targetMimetype = "application/pdf";
+			if (sourceMimetype.equalsIgnoreCase("application/pdf")
+					|| sourceMimetype.equalsIgnoreCase("image/tiff")
+					|| sourceMimetype.equalsIgnoreCase("image/png")
+					|| sourceMimetype.equalsIgnoreCase("image/jpeg")) {
+
+				// Change mimetype to PDF if source mimetype is not pdf
+				if (!sourceMimetype.equalsIgnoreCase(targetMimetype)) {
+					ContentData cd = (ContentData) nodeService.getProperty(
+							actionedUponNodeRef, ContentModel.PROP_CONTENT);
+					ContentData newCD = ContentData.setMimetype(cd,
+							targetMimetype);
+					nodeService.setProperty(actionedUponNodeRef,
+							ContentModel.PROP_CONTENT, newCD);
+
+					// change file extension to .pdf in the repository
+					String fileName = (String) nodeService.getProperty(
+							actionedUponNodeRef, ContentModel.PROP_NAME);
+					fileName = FilenameUtils.removeExtension(fileName);
+					fileName = fileName + ".pdf";
+					nodeService.setProperty(actionedUponNodeRef,
+							ContentModel.PROP_NAME, fileName);
+					
+					versionProperties.put(Version.PROP_DESCRIPTION,
+							"OCR Run on this Document & Converted to PDF.");
+				}else{
+					versionProperties.put(Version.PROP_DESCRIPTION,
+							"OCR Run on this Document.");
+				}
+
+				NodeRef workingNode = checkOutCheckInService
+						.checkout(actionedUponNodeRef);
+				ContentReader reader = fileFolderService.getReader(workingNode);
+
+				logger.debug("Beginning transform for "
+						+ reader.getContentData().getContentUrl());
+
 				String sourceExtension = mimetypeService
 						.getExtension(sourceMimetype);
 				String targetExtension = mimetypeService
@@ -219,11 +255,11 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 							"Failed to perform OCR transformation: \n" + result);
 				}
 				logger.debug("Transform executed");
+
 				ContentWriter writer = fileFolderService.getWriter(workingNode);
 				writer.putContent(targetFile);
-				writer.setMimetype(targetMimetype);
-			
-				checkOutCheckInService.checkin(workingNode, null);
+
+				checkOutCheckInService.checkin(workingNode, versionProperties);
 
 				logger.info("Transform complete");
 			}
@@ -241,6 +277,10 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 	public void setCheckOutCheckInService(
 			CheckOutCheckInService checkOutCheckinService) {
 		this.checkOutCheckInService = checkOutCheckinService;
+	}
+
+	public void setNodeService(NodeService nodeService) {
+		this.nodeService = nodeService;
 	}
 
 }

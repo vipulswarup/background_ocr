@@ -13,6 +13,9 @@
 		<property name="mimetypeService">
 			<ref bean="MimetypeService" />
 		</property>
+		<property name="nodeService">
+			<ref bean="NodeService" />
+		</property>
 		<property name="executer">
 			<bean name="transformer.Tesseract.Command" class="org.alfresco.util.exec.RuntimeExec">
 				<property name="commandsAndArguments">
