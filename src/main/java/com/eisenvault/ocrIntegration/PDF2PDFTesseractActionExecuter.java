@@ -264,7 +264,7 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 				logger.info("Transform complete");
 			}
 		} catch (Exception e) {
-			logger.error("Exception during transform", e);
+			logger.error("Exception during transform:" + e.getMessage());
 
 		}
 

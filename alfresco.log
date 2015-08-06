@@ -1,62 +1,18 @@
-2015-06-18 17:19:45,559 WARN  [org.alfresco.util.RuntimeSystemPropertiesSetter] [main] Could not find alfresco-jmxrmi.password on classpath
-2015-06-18 17:19:45,765 INFO  [org.alfresco.repo.admin] [main] Using database URL 'jdbc:h2:./alf_data_dev/h2_data/alf_dev;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;MVCC=FALSE;LOCK_MODE=0' with user 'alfresco'.
-2015-06-18 17:19:46,986 INFO  [org.alfresco.repo.admin] [main] Connected to database H2 version 1.4.185 (2015-01-16)
-2015-06-18 17:19:56,181 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'sysAdmin' subsystem, ID: [sysAdmin, default]
-2015-06-18 17:19:56,237 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'sysAdmin' subsystem, ID: [sysAdmin, default] complete
-2015-06-18 17:19:56,275 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Ignoring script patch (post-Hibernate): patch.db-V4.2-metadata-query-indexes
-2015-06-18 17:20:06,209 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Transformers' subsystem, ID: [Transformers, default]
-2015-06-18 17:20:06,378 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Transformers' subsystem, ID: [Transformers, default] complete
-2015-06-18 17:20:06,379 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main] In order to support dynamic setting of transformer options, Spring XML configuration
-2015-06-18 17:20:06,379 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main] is no longer used to initialise these options.
-2015-06-18 17:20:06,379 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main]  
-2015-06-18 17:20:06,379 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main] Your system appears to contains custom Spring configuration which should be replace by
-2015-06-18 17:20:06,380 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main] the following Alfresco global properties. In the case of the Enterprise edition these
-2015-06-18 17:20:06,380 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main] values may then be dynamically changed via JMX.
-2015-06-18 17:20:06,380 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main]  
-2015-06-18 17:20:06,380 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main] content.transformer.Tesseract.extensions.tiff.pdf.priority=50
-2015-06-18 17:20:06,381 ERROR [org.alfresco.repo.content.transform.ContentTransformerHelper] [main] content.transformer.Tesseract.extensions.tiff.pdf.supported=true
-2015-06-18 17:20:06,383 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Stopping 'Transformers' subsystem, ID: [Transformers, default]
-2015-06-18 17:20:06,384 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Stopped 'Transformers' subsystem, ID: [Transformers, default]
-2015-06-18 17:20:06,384 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Transformers' subsystem, ID: [Transformers, default]
-2015-06-18 17:20:06,498 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Transformers' subsystem, ID: [Transformers, default] complete
-2015-06-18 17:20:06,917 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
-2015-06-18 17:20:07,013 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted] complete
-2015-06-18 17:20:07,105 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Connecting to database: jdbc:h2:./alf_data_dev/h2_data/alf_dev, UserName=ALFRESCO, H2 JDBC Driver
-2015-06-18 17:20:07,108 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema managed by database dialect org.hibernate.dialect.H2Dialect.
-2015-06-18 17:20:07,366 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 83 potential problems, results written to: /tmp/Alfresco/Alfresco-H2Dialect-Validation-Pre-Upgrade-alf_-489385150125774985.txt
-2015-06-18 17:20:07,390 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 28 potential problems, results written to: /tmp/Alfresco/Alfresco-H2Dialect-Validation-Pre-Upgrade-jbpm_-74355472835414082.txt
-2015-06-18 17:20:07,409 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 25 potential problems, results written to: /tmp/Alfresco/Alfresco-H2Dialect-Validation-Pre-Upgrade-act_-3594999178485260507.txt
-2015-06-18 17:20:07,494 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /tmp/Alfresco/Alfresco-schema-H2Dialect-pre-upgrade-alf_-7499700380823463340.xml.
-2015-06-18 17:20:07,494 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /tmp/Alfresco/Alfresco-schema-H2Dialect-pre-upgrade-jbpm_-8200139286014492096.xml.
-2015-06-18 17:20:07,494 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /tmp/Alfresco/Alfresco-schema-H2Dialect-pre-upgrade-act_-8101232305210383185.xml.
-2015-06-18 17:20:07,499 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-3085578064966578854.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-RepoTables.sql).
-2015-06-18 17:20:07,662 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-1317747772240974558.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-LockTables.sql).
-2015-06-18 17:20:07,672 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-2785077346419003790.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-ContentTables.sql).
-2015-06-18 17:20:07,692 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-2160328073707725780.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-PropertyValueTables.sql).
-2015-06-18 17:20:07,770 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-5620361735996974292.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-ContentUrlEncryptionTables.sql).
-2015-06-18 17:20:07,780 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-1951667279139311605.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-AuditTables.sql).
-2015-06-18 17:20:07,805 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-2395284170464069466.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-ActivityTables.sql).
-2015-06-18 17:20:07,812 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-4703055530372936081.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-UsageTables.sql).
-2015-06-18 17:20:07,817 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-6719733041544634279.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-SubscriptionTables.sql).
-2015-06-18 17:20:07,842 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-1897482911212816072.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-TenantTables.sql).
-2015-06-18 17:20:07,890 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-3390025018442052915.sql (Generated).
-2015-06-18 17:20:07,999 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-5243520003744441563.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoPostCreate-JBPM-Extra.sql).
-2015-06-18 17:20:08,000 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-720066628139126199.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoPostCreate-JBPM-FK-indexes.sql).
-2015-06-18 17:20:08,024 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /tmp/Alfresco/AlfrescoSchema-H2Dialect-Update-6604400812410164884.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoPostCreate-JBPM-varinst-indexes.sql).
-2015-06-18 17:20:08,028 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Create scripts executed in 816 ms
-2015-06-18 17:20:08,530 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] All executed statements:  /tmp/Alfresco/AlfrescoSchema-H2Dialect-All_Statements-8017328698554592242.sql.
-2015-06-18 17:20:08,947 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 737 potential problems, results written to: /tmp/Alfresco/Alfresco-H2Dialect-Validation-Post-Upgrade-alf_-3812934627289283565.txt
-2015-06-18 17:20:09,124 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 760 potential problems, results written to: /tmp/Alfresco/Alfresco-H2Dialect-Validation-Post-Upgrade-jbpm_-964552823821223190.txt
-2015-06-18 17:20:09,245 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 259 potential problems, results written to: /tmp/Alfresco/Alfresco-H2Dialect-Validation-Post-Upgrade-act_-4924735024263321836.txt
-2015-06-18 17:20:09,869 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /tmp/Alfresco/Alfresco-schema-H2Dialect-post-upgrade-alf_-3363618348566960612.xml.
-2015-06-18 17:20:09,870 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /tmp/Alfresco/Alfresco-schema-H2Dialect-post-upgrade-jbpm_-6727808296838250191.xml.
-2015-06-18 17:20:09,870 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /tmp/Alfresco/Alfresco-schema-H2Dialect-post-upgrade-act_-7528064640793454799.xml.
-2015-06-18 17:20:10,518 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Search' subsystem, ID: [Search, managed, solr4]
-2015-06-18 17:20:10,985 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Search' subsystem, ID: [Search, managed, solr4] complete
-2015-06-18 17:20:16,187 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
-2015-06-18 17:20:16,302 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1] complete
-2015-06-18 17:20:20,796 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'thirdparty' subsystem, ID: [thirdparty, default]
-2015-06-18 17:20:20,832 ERROR [org.alfresco.repo.content.transform.RuntimeExecutableContentTransformerWorker] [main] Failed to start a runtime executable content transformer: 
+2015-08-06 15:59:33,592 WARN  [org.alfresco.util.RuntimeSystemPropertiesSetter] [main] Could not find alfresco-jmxrmi.password on classpath
+2015-08-06 15:59:33,989 INFO  [org.alfresco.repo.admin] [main] Using database URL 'jdbc:h2:./alf_data_dev/h2_data/alf_dev;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;MVCC=FALSE;LOCK_MODE=0' with user 'alfresco'.
+2015-08-06 15:59:36,769 INFO  [org.alfresco.repo.admin] [main] Connected to database H2 version 1.4.185 (2015-01-16)
+2015-08-06 15:59:58,475 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2015-08-06 15:59:58,515 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'sysAdmin' subsystem, ID: [sysAdmin, default] complete
+2015-08-06 15:59:58,540 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Ignoring script patch (post-Hibernate): patch.db-V4.2-metadata-query-indexes
+2015-08-06 16:00:09,367 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2015-08-06 16:00:09,457 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted] complete
+2015-08-06 16:00:09,541 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Connecting to database: jdbc:h2:./alf_data_dev/h2_data/alf_dev, UserName=ALFRESCO, H2 JDBC Driver
+2015-08-06 16:00:09,542 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema managed by database dialect org.hibernate.dialect.H2Dialect.
+2015-08-06 16:00:10,308 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] No changes were made to the schema.
+2015-08-06 16:00:11,116 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2015-08-06 16:00:11,270 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1] complete
+2015-08-06 16:00:12,470 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'thirdparty' subsystem, ID: [thirdparty, default]
+2015-08-06 16:00:12,571 ERROR [org.alfresco.repo.content.transform.RuntimeExecutableContentTransformerWorker] [main] Failed to start a runtime executable content transformer: 
 Execution result: 
    os:         Linux
    command:    ./bin/pdf2swf -V
@@ -64,247 +20,82 @@ Execution result:
    exit code:  1
    out:        
    err:        Cannot run program "./bin/pdf2swf": error=2, No such file or directory
-2015-06-18 17:20:20,896 ERROR [org.alfresco.repo.content.transform.magick.AbstractImageMagickContentTransformerWorker] [main] ImageMagickContentTransformerWorker not available: 05180001 Failed to perform ImageMagick transformation: 
+2015-08-06 16:00:12,719 ERROR [org.alfresco.repo.content.transform.magick.AbstractImageMagickContentTransformerWorker] [main] ImageMagickContentTransformerWorker not available: 07060001 Failed to perform ImageMagick transformation: 
 Execution result: 
    os:         Linux
-   command:    ./ImageMagick/bin/convert /tmp/Alfresco/ImageMagickContentTransformerWorker_init_source_369154898969601651.gif /tmp/Alfresco/ImageMagickContentTransformerWorker_init_target_1129994152007206472.png
+   command:    ./ImageMagick/bin/convert /tmp/Alfresco/ImageMagickContentTransformerWorker_init_source_4459458095009255256.gif /tmp/Alfresco/ImageMagickContentTransformerWorker_init_target_985080176097465902.png
    succeeded:  false
    exit code:  1
    out:        
    err:        Cannot run program "./ImageMagick/bin/convert": error=2, No such file or directory
-2015-06-18 17:20:20,899 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'thirdparty' subsystem, ID: [thirdparty, default] complete
-2015-06-18 17:20:20,899 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'OOoDirect' subsystem, ID: [OOoDirect, default]
-2015-06-18 17:20:21,476 WARN  [org.alfresco.util.OpenOfficeConnectionTester] [main] An initial OpenOffice connection could not be established.
-2015-06-18 17:20:21,481 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'OOoDirect' subsystem, ID: [OOoDirect, default] complete
-2015-06-18 17:20:21,485 INFO  [org.alfresco.repo.admin.ConfigurationChecker] [main] The Alfresco root data directory ('dir.root') is: alf_data_dev
-2015-06-18 17:20:21,532 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] Checking for patches to apply ...
-2015-06-18 17:20:21,750 WARN  [org.alfresco.repo.admin.patch.PatchExecuter] [main] Patch description is not available: Patch[ id=patch.contentFormFolderType, description=patch.contentFormFolderType.description, fixesFromSchema=0, fixesToSchema=36, targetSchema=37, ignored=false]
-2015-06-18 17:20:21,767 WARN  [org.alfresco.repo.admin.patch.PatchExecuter] [main] Patch description is not available: Patch[ id=patch.redeploySubmitProcess, description=patch.redeploySubmitProcess.description, fixesFromSchema=0, fixesToSchema=57, targetSchema=58, ignored=false]
-2015-06-18 17:20:22,203 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 	Applying patch 'patch.siteLoadPatch.swsdp' (Loads a sample site into the repository.).
-2015-06-18 17:20:25,614 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 	Applying patch 'patch.exampleJavaScript' (Loads sample Javascript file into datadictionary scripts folder).
-2015-06-18 17:20:25,654 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
-=== Applied patch                 === 
-ID: patch.db-V3.4-UsageTables
-RESULT: 
-Script completed
-=====================================
-2015-06-18 17:20:25,655 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
-=== Applied patch                 === 
-ID: patch.db-V4.0-TenantTables
-RESULT: 
-Script completed
-=====================================
-2015-06-18 17:20:25,655 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
-=== Applied patch                 === 
-ID: patch.db-V3.4-JBPM-varinst-indexes
-RESULT: 
-Script completed
-=====================================
-2015-06-18 17:20:25,656 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
-=== Applied patch                 === 
-ID: patch.db-V5.0-ContentUrlEncryptionTables
-RESULT: 
-Script completed
-=====================================
-2015-06-18 17:20:25,656 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
-=== Applied patch                 === 
-ID: patch.siteLoadPatch.swsdp
-RESULT: 
-Site swsdp imported.
-=====================================
-2015-06-18 17:20:25,656 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
-=== Applied patch                 === 
-ID: patch.exampleJavaScript
-RESULT: 
-Imported view into bootstrap location: /app:company_home/app:dictionary/app:scripts (workspace://SpacesStore/a481137f-1845-4eb3-acd3-4ecb970ff7da)
-=====================================
-2015-06-18 17:20:25,707 INFO  [org.alfresco.repo.module.ModuleServiceImpl] [main] Found 1 module(s).
-2015-06-18 17:20:25,722 INFO  [org.alfresco.repo.module.ModuleServiceImpl] [main] Installing module 'repo-amp' version 1.0.1506181719.
-2015-06-18 17:20:25,745 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'fileServers' subsystem, ID: [fileServers, default]
-2015-06-18 17:20:26,514 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'fileServers' subsystem, ID: [fileServers, default] complete
-2015-06-18 17:20:26,515 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'imap' subsystem, ID: [imap, default]
-2015-06-18 17:20:26,765 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'imap' subsystem, ID: [imap, default] complete
-2015-06-18 17:20:26,766 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'email' subsystem, ID: [email, outbound]
-2015-06-18 17:20:26,840 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'email' subsystem, ID: [email, outbound] complete
-2015-06-18 17:20:26,841 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'email' subsystem, ID: [email, inbound]
-2015-06-18 17:20:26,926 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'email' subsystem, ID: [email, inbound] complete
-2015-06-18 17:20:26,927 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Subscriptions' subsystem, ID: [Subscriptions, default]
-2015-06-18 17:20:26,953 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Subscriptions' subsystem, ID: [Subscriptions, default] complete
-2015-06-18 17:20:26,964 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Synchronization' subsystem, ID: [Synchronization, default]
-2015-06-18 17:20:27,113 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Synchronization' subsystem, ID: [Synchronization, default] complete
-2015-06-18 17:20:27,187 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Alfresco JVM - v1.8.0_45-b14; maximum heap size 1355.000MB
-2015-06-18 17:20:27,187 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Server Mode :UNKNOWN
-2015-06-18 17:20:27,188 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Alfresco started (Community). Current version: 5.0.0 (d r99759-b2) schema 8,022. Originally installed version: 5.0.0 (d r99759-b2) schema 8,022.
-2015-06-18 17:20:27,211 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
-2015-06-18 17:20:27,561 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default] complete
-2015-06-18 17:20:27,566 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Replication' subsystem, ID: [Replication, default]
-2015-06-18 17:20:27,596 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Replication' subsystem, ID: [Replication, default] complete
-2015-06-18 17:20:28,662 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 13 Web Scripts (+0 failed), 15 URLs
-2015-06-18 17:20:28,663 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 1 Package Description Documents (+0 failed) 
-2015-06-18 17:20:28,663 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 0 Schema Description Documents (+0 failed) 
-2015-06-18 17:20:28,668 INFO  [org.springframework.extensions.webscripts.AbstractRuntimeContainer] [main] Initialised Spring Web Scripts Container Web Script Container (in 154.94638ms)
-2015-06-18 17:20:28,748 INFO  [org.springframework.extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
-2015-06-18 17:20:28,756 INFO  [org.springframework.extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
-2015-06-18 17:20:28,781 ERROR [org.springframework.test.context.TestContextManager] [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c1ae95] to prepare test instance [com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest@4bd47b75]
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: protected com.eisenvault.ocrIntegration.demoamp.DemoComponent com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest.demoComponent; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1147)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:376)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:110)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:321)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
-	at com.tradeshift.test.remote.RemoteTestRunner.run(RemoteTestRunner.java:73)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: protected com.eisenvault.ocrIntegration.demoamp.DemoComponent com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest.demoComponent; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:517)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:286)
-	... 28 more
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:993)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:863)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:775)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:489)
-	... 30 more
-2015-06-18 17:20:28,821 ERROR [org.springframework.test.context.TestContextManager] [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c1ae95] to prepare test instance [com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest@3145c33b]
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: protected com.eisenvault.ocrIntegration.demoamp.DemoComponent com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest.demoComponent; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1147)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:376)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:110)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:321)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
-	at com.tradeshift.test.remote.RemoteTestRunner.run(RemoteTestRunner.java:73)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: protected com.eisenvault.ocrIntegration.demoamp.DemoComponent com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest.demoComponent; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:517)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:286)
-	... 28 more
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:993)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:863)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:775)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:489)
-	... 30 more
-2015-06-18 17:20:28,826 ERROR [org.springframework.test.context.TestContextManager] [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c1ae95] to prepare test instance [com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest@16c230c]
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: protected com.eisenvault.ocrIntegration.demoamp.DemoComponent com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest.demoComponent; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1147)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:376)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:110)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:321)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
-	at com.tradeshift.test.remote.RemoteTestRunner.run(RemoteTestRunner.java:73)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: protected com.eisenvault.ocrIntegration.demoamp.DemoComponent com.eisenvault.ocrIntegration.demoamp.test.DemoComponentTest.demoComponent; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:517)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:286)
-	... 28 more
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.eisenvault.ocrIntegration.demoamp.DemoComponent] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:993)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:863)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:775)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:489)
-	... 30 more
-2015-06-18 17:20:29,039 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'Replication' subsystem, ID: [Replication, default]
-2015-06-18 17:20:29,042 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'Replication' subsystem, ID: [Replication, default]
-2015-06-18 17:20:29,076 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'Subscriptions' subsystem, ID: [Subscriptions, default]
-2015-06-18 17:20:29,078 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'Subscriptions' subsystem, ID: [Subscriptions, default]
-2015-06-18 17:20:29,078 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'email' subsystem, ID: [email, inbound]
-2015-06-18 17:20:29,080 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'email' subsystem, ID: [email, inbound]
-2015-06-18 17:20:29,081 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'fileServers' subsystem, ID: [fileServers, default]
-2015-06-18 17:20:29,097 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'fileServers' subsystem, ID: [fileServers, default]
-2015-06-18 17:20:29,107 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
-2015-06-18 17:20:29,115 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
-2015-06-18 17:20:29,116 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-31] Invocation of destroy method 'close' failed on bean with name 'solrSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-2015-06-18 17:20:29,117 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-31] Invocation of destroy method 'close' failed on bean with name 'activitiesSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-2015-06-18 17:20:29,119 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'OOoDirect' subsystem, ID: [OOoDirect, default]
-2015-06-18 17:20:29,121 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'OOoDirect' subsystem, ID: [OOoDirect, default]
-2015-06-18 17:20:29,122 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
-2015-06-18 17:20:29,123 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
-2015-06-18 17:20:29,125 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'Synchronization' subsystem, ID: [Synchronization, default]
-2015-06-18 17:20:29,127 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'Synchronization' subsystem, ID: [Synchronization, default]
-2015-06-18 17:20:29,128 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'email' subsystem, ID: [email, outbound]
-2015-06-18 17:20:29,129 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'email' subsystem, ID: [email, outbound]
-2015-06-18 17:20:29,134 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'imap' subsystem, ID: [imap, default]
-2015-06-18 17:20:29,135 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'imap' subsystem, ID: [imap, default]
-2015-06-18 17:20:29,853 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'Search' subsystem, ID: [Search, managed, solr4]
-2015-06-18 17:20:30,316 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'Search' subsystem, ID: [Search, managed, solr4]
-2015-06-18 17:20:30,428 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-31] Invocation of destroy method 'close' failed on bean with name 'locksSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-2015-06-18 17:20:30,431 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-31] Invocation of destroy method 'close' failed on bean with name 'propertyValueSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-2015-06-18 17:20:30,431 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'thirdparty' subsystem, ID: [thirdparty, default]
-2015-06-18 17:20:30,433 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'thirdparty' subsystem, ID: [thirdparty, default]
-2015-06-18 17:20:30,434 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'Transformers' subsystem, ID: [Transformers, default]
-2015-06-18 17:20:30,443 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'Transformers' subsystem, ID: [Transformers, default]
-2015-06-18 17:20:30,445 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-31] Invocation of destroy method 'close' failed on bean with name 'auditSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-2015-06-18 17:20:30,446 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
-2015-06-18 17:20:30,448 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
-2015-06-18 17:20:30,450 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-31] Invocation of destroy method 'close' failed on bean with name 'contentSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-2015-06-18 17:20:30,453 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopping 'sysAdmin' subsystem, ID: [sysAdmin, default]
-2015-06-18 17:20:30,454 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-31] Stopped 'sysAdmin' subsystem, ID: [sysAdmin, default]
-2015-06-18 17:20:30,457 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-31] Invocation of destroy method 'close' failed on bean with name 'repoSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-06 16:00:12,727 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'thirdparty' subsystem, ID: [thirdparty, default] complete
+2015-08-06 16:00:12,728 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2015-08-06 16:00:13,231 WARN  [org.alfresco.util.OpenOfficeConnectionTester] [main] An initial OpenOffice connection could not be established.
+2015-08-06 16:00:13,234 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'OOoDirect' subsystem, ID: [OOoDirect, default] complete
+2015-08-06 16:00:13,236 INFO  [org.alfresco.repo.admin.ConfigurationChecker] [main] The Alfresco root data directory ('dir.root') is: alf_data_dev
+2015-08-06 16:00:13,237 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Search' subsystem, ID: [Search, managed, solr4]
+2015-08-06 16:00:14,774 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Search' subsystem, ID: [Search, managed, solr4] complete
+2015-08-06 16:00:14,853 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] Checking for patches to apply ...
+2015-08-06 16:00:16,334 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] No patches were required.
+2015-08-06 16:00:16,549 INFO  [org.alfresco.repo.module.ModuleServiceImpl] [main] Found 1 module(s).
+2015-08-06 16:00:16,849 INFO  [org.alfresco.repo.module.ModuleServiceImpl] [main] Upgrading module 'repo-amp' version 1.0.1508061559 (was 1.0.1507311752).
+2015-08-06 16:00:17,407 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'fileServers' subsystem, ID: [fileServers, default]
+2015-08-06 16:00:20,291 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'fileServers' subsystem, ID: [fileServers, default] complete
+2015-08-06 16:00:20,292 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'imap' subsystem, ID: [imap, default]
+2015-08-06 16:00:21,043 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'imap' subsystem, ID: [imap, default] complete
+2015-08-06 16:00:21,046 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'email' subsystem, ID: [email, outbound]
+2015-08-06 16:00:21,408 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'email' subsystem, ID: [email, outbound] complete
+2015-08-06 16:00:21,413 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'email' subsystem, ID: [email, inbound]
+2015-08-06 16:00:21,586 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'email' subsystem, ID: [email, inbound] complete
+2015-08-06 16:00:21,589 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2015-08-06 16:00:21,733 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Subscriptions' subsystem, ID: [Subscriptions, default] complete
+2015-08-06 16:00:21,928 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Synchronization' subsystem, ID: [Synchronization, default]
+2015-08-06 16:00:22,552 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Synchronization' subsystem, ID: [Synchronization, default] complete
+2015-08-06 16:00:22,879 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Alfresco JVM - v1.8.0_51-b16; maximum heap size 1355.000MB
+2015-08-06 16:00:22,879 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Server Mode :UNKNOWN
+2015-08-06 16:00:22,881 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Alfresco started (Community). Current version: 5.0.0 (d r99759-b2) schema 8,022. Originally installed version: 5.0.0 (d r99759-b2) schema 8,022.
+2015-08-06 16:00:22,927 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2015-08-06 16:00:23,539 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default] complete
+2015-08-06 16:00:23,541 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Replication' subsystem, ID: [Replication, default]
+2015-08-06 16:00:23,568 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Replication' subsystem, ID: [Replication, default] complete
+2015-08-06 16:00:26,904 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 13 Web Scripts (+0 failed), 15 URLs
+2015-08-06 16:00:26,905 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 1 Package Description Documents (+0 failed) 
+2015-08-06 16:00:26,905 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 0 Schema Description Documents (+0 failed) 
+2015-08-06 16:00:26,909 INFO  [org.springframework.extensions.webscripts.AbstractRuntimeContainer] [main] Initialised Spring Web Scripts Container Web Script Container (in 149.87973ms)
+2015-08-06 16:00:27,002 INFO  [org.springframework.extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+2015-08-06 16:00:27,033 INFO  [org.springframework.extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+2015-08-06 16:00:27,256 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'Replication' subsystem, ID: [Replication, default]
+2015-08-06 16:00:27,269 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'Replication' subsystem, ID: [Replication, default]
+2015-08-06 16:00:27,335 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2015-08-06 16:00:27,348 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2015-08-06 16:00:27,351 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'email' subsystem, ID: [email, inbound]
+2015-08-06 16:00:27,352 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'email' subsystem, ID: [email, inbound]
+2015-08-06 16:00:27,352 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'fileServers' subsystem, ID: [fileServers, default]
+2015-08-06 16:00:27,373 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'fileServers' subsystem, ID: [fileServers, default]
+2015-08-06 16:00:27,382 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2015-08-06 16:00:27,384 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2015-08-06 16:00:27,385 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-30] Invocation of destroy method 'close' failed on bean with name 'solrSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-06 16:00:27,386 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-30] Invocation of destroy method 'close' failed on bean with name 'activitiesSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-06 16:00:27,390 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2015-08-06 16:00:27,394 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2015-08-06 16:00:27,395 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2015-08-06 16:00:27,398 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2015-08-06 16:00:27,406 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'Synchronization' subsystem, ID: [Synchronization, default]
+2015-08-06 16:00:27,407 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'Synchronization' subsystem, ID: [Synchronization, default]
+2015-08-06 16:00:27,422 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'email' subsystem, ID: [email, outbound]
+2015-08-06 16:00:27,423 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'email' subsystem, ID: [email, outbound]
+2015-08-06 16:00:27,431 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'imap' subsystem, ID: [imap, default]
+2015-08-06 16:00:27,446 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'imap' subsystem, ID: [imap, default]
+2015-08-06 16:00:27,680 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'Search' subsystem, ID: [Search, managed, solr4]
+2015-08-06 16:00:27,887 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'Search' subsystem, ID: [Search, managed, solr4]
+2015-08-06 16:00:27,970 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-30] Invocation of destroy method 'close' failed on bean with name 'locksSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-06 16:00:27,973 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-30] Invocation of destroy method 'close' failed on bean with name 'propertyValueSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-06 16:00:27,973 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'thirdparty' subsystem, ID: [thirdparty, default]
+2015-08-06 16:00:27,981 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'thirdparty' subsystem, ID: [thirdparty, default]
+2015-08-06 16:00:27,982 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-30] Invocation of destroy method 'close' failed on bean with name 'auditSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-06 16:00:27,983 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2015-08-06 16:00:28,011 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2015-08-06 16:00:28,012 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-30] Invocation of destroy method 'close' failed on bean with name 'contentSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-06 16:00:28,012 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopping 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2015-08-06 16:00:28,013 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-30] Stopped 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2015-08-06 16:00:28,025 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-30] Invocation of destroy method 'close' failed on bean with name 'repoSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession

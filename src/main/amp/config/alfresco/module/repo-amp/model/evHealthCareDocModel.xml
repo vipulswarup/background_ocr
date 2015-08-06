@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Definition of new Model -->
+
+<!-- The important part here is the name - Note: the use of the ev: namespace which is defined further on in the document -->
+<model name="ev:evdocmodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+	<!-- Optional meta-data about the model -->   
+	<description>EisenVault Document Model</description>
+	<author>EisenVault DMS Team</author>
+	<version>1.0</version>
+
+	<!-- Imports are required to allow references to definitions in other models -->   
+	<imports>
+		<!-- Import Alfresco Dictionary Definitions -->
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+		<!-- Import Alfresco Content Domain Model Definitions -->
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+	</imports>
+
+	<!-- Introduction of new namespaces defined by this model -->
+	<namespaces>
+		<namespace uri="http://www.eisenvault.net/model/content/1.0" prefix="ev"/>
+	</namespaces>
+	
+	
+	<constraints>
+		<constraint name="ev:alphaNumericConstraint" type="REGEX">
+			<parameter name="expression"><value>[a-zA-Z0-9]*</value></parameter>
+			<parameter name="requiresMatch"><value>true</value></parameter>
+		</constraint>
+		<constraint name="ev:maxLengthOfSixConstraint" type="LENGTH">
+			<parameter name="minLength"><value>0</value></parameter>
+			<parameter name="maxLength"><value>6</value></parameter>
+		</constraint>
+		<constraint name="ev:maxLengthOfTwelveConstraint" type="LENGTH">
+			<parameter name="minLength"><value>0</value></parameter>
+			<parameter name="maxLength"><value>12</value></parameter>
+		</constraint>
+		<constraint name="ev:maxLengthOfOneTwentyEightConstraint" type="LENGTH">
+			<parameter name="minLength"><value>0</value></parameter>
+			<parameter name="maxLength"><value>128</value></parameter>
+		</constraint>
+		<constraint name="ev:modeOfPaymentConstraint" type="LIST">
+			<parameter name="allowedValues">
+				<list>
+					<value>Cash</value>
+					<value>Cheque</value>
+					<value>Credit Card</value>
+					<value>Debit Card</value>
+					<value>Insurance</value>
+				</list>
+			</parameter>
+		</constraint>
+		<constraint name="ev:typeOfDiseaseConstraint" type="LIST">
+			<parameter name="allowedValues">
+				<list>
+					<value>Aesthetic and Reconstructive Surgery</value>
+					<value>Cardiology</value>
+					<value>Dental</value>
+					<value>ENT</value>
+					<value>Gastroenterology</value>
+					<value>Neurosciences</value>
+					<value>Oncology</value>
+					<value>Orthopaedics</value>
+					<value>Paediatric</value>
+				</list>
+			</parameter>
+		</constraint>
+	</constraints>
+  
+	<types>
+		<!--  Enterprise-wide generic document type -->
+		<type name="ev:doc">
+			<title>EisenVault Health Care Document</title>
+			<parent>cm:content</parent>
+			<properties>
+				<!-- Numerical Properties -->
+				<property name="ev:universalHealthcarId">
+					<title>Universal Healthcare ID</title>
+					<type>d:long</type>
+					<multiple>false</multiple>
+					<constraints>
+						<constraint ref="ev:maxLengthOfTwelveConstraint" />
+					</constraints>
+				</property>
+				<property name="ev:insuranceClaimNumber">
+					<title>Insurance Claim Number</title>
+					<type>d:long</type>
+					<multiple>false</multiple>
+					<constraints>
+						<constraint ref="ev:maxLengthOfTwelveConstraint" />
+					</constraints>
+				</property>
+			
+				<!-- Date Properties -->
+				<property name="ev:dateOfAdmission">
+					<title>Date of Admission</title>
+					<type>d:date</type>
+					<multiple>false</multiple>
+				</property>
+				<property name="ev:dateOfDischarge">
+					<title>Date of Discharge</title>
+					<type>d:date</type>
+					<multiple>false</multiple>
+				</property>
+
+				<!-- Text Properties -->
+				<property name="ev:treatingDoctor">
+					<title>Treating Doctor</title>
+					<type>d:text</type>
+					<multiple>false</multiple>
+					<constraints>
+						<constraint ref="ev:maxLengthOfOneTwentyEightConstraint" />
+					</constraints>
+				</property>
+	
+				<!-- List Properties -->
+				<property name="ev:modeOfPayment">
+					<title>Mode of Payment</title>
+					<type>d:text</type>
+					<multiple>false</multiple>
+					<constraints>
+						<constraint ref="ev:modeOfPaymentConstraint" />
+					</constraints>
+				</property>
+				<property name="ev:typeOfDisease">
+					<title>Type of Disease</title>
+					<type>d:text</type>
+					<multiple>false</multiple>
+					<constraints>
+						<constraint ref="ev:typeOfDiseaseConstraint" />
+					</constraints>
+				</property>
+			
+				<!-- Physical Filing Properties -->
+				<property name="ev:barcodeNumber">
+					<title>Barcode Number</title>
+					<type>d:text</type>
+					<multiple>false</multiple>
+					<constraints>
+						<constraint ref="ev:maxLengthOfTwelveConstraint" />
+						<constraint ref="ev:alphaNumericConstraint" />
+					</constraints>
+				</property>
+				<property name="ev:fileNumber">
+					<title>File Number</title>
+					<type>d:text</type>
+					<multiple>false</multiple>
+					<constraints>
+						<constraint ref="ev:maxLengthOfSixConstraint" />
+						<constraint ref="ev:alphaNumericConstraint" />
+					</constraints>
+				</property>
+				<property name="ev:boxNumber">
+					<title>Box Number</title>
+					<type>d:text</type>
+					<multiple>false</multiple>
+					<constraints>
+						<constraint ref="ev:maxLengthOfSixConstraint" />
+						<constraint ref="ev:alphaNumericConstraint" />
+					</constraints>
+				</property>
+			</properties>
+			
+		</type>
+	</types>
+	
+</model>
