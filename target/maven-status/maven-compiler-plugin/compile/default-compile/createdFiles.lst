@@ -1,1 +1,4 @@
-com/eisenvault/ocrIntegration/PDF2PDFTesseractActionExecuter.class
+com/eisenvault/ocrIntegration/EnglishOCRActionExecuter.class
+com/eisenvault/ocrIntegration/HindiOCRActionExecuter.class
+com/eisenvault/ocrIntegration/OCRMethods.class
+com/eisenvault/ocrIntegration/BengaliOCRActionExecuter.class

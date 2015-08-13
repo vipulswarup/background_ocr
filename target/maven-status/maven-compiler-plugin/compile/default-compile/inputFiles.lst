@@ -1,1 +1,4 @@
-/home/vipulswarup/workspace/ocrIntegration/repo-amp/src/main/java/com/eisenvault/ocrIntegration/PDF2PDFTesseractActionExecuter.java
+/home/vipulswarup/workspace/ocrIntegration/repo-amp/src/main/java/com/eisenvault/ocrIntegration/BengaliOCRActionExecuter.java
+/home/vipulswarup/workspace/ocrIntegration/repo-amp/src/main/java/com/eisenvault/ocrIntegration/OCRMethods.java
+/home/vipulswarup/workspace/ocrIntegration/repo-amp/src/main/java/com/eisenvault/ocrIntegration/EnglishOCRActionExecuter.java
+/home/vipulswarup/workspace/ocrIntegration/repo-amp/src/main/java/com/eisenvault/ocrIntegration/HindiOCRActionExecuter.java

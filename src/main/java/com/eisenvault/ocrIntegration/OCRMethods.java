@@ -1,24 +1,5 @@
 package com.eisenvault.ocrIntegration;
 
-/**
- This file is part of the Tesseract Alfresco Integration written by
- Simon White.
-
- Customised by Vipul Swarup for EisenVault - 17 June 2015
-
- The Integration is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
-
- The Integration is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with the Integration.  If not, see <http://www.gnu.org/licenses/>.
- */
 import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
@@ -48,61 +29,43 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-/**
- * Simple transformer, very heavily based upon the Alfresco-provided ImageMagick
- * transformer, to allow for image->text transformation via Tesseract.
- * 
- * Note that simply having an image->text/plain transformation available will
- * let images get indexed by Alfresco, which is nice.
- * 
- * Very basic code so far, intended as a demonstrator/starting point rather than
- * for production use at this stage
- * 
- * TODO: il8n TODO: expand available source mimetypes and make configurable
- * 
- * A singleton bean, instantiated from the service-context.xml in the Tesseract
- * module
- *
- * @author simon_DOT_white_AT_gmail_DOT_com
- */
-public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
+public abstract class OCRMethods extends ActionExecuterAbstractBase {
 
-	private static final Log logger = LogFactory
-			.getLog(PDF2PDFTesseractActionExecuter.class);
-
-	private static final String VAR_SOURCE = "source";
-	private static final String VAR_TARGET = "target";
-	private static final String NAME = "ocr-pdf";
-	// private static final String PARAM_DESTINATION_FOLDER =
-	// "destination-folder";
-
-	private FileFolderService fileFolderService;
-	private NodeService nodeService;
-	private CheckOutCheckInService checkOutCheckInService;
+	protected static final Log logger = LogFactory
+			.getLog(OCRMethods.class);
+	
+	protected FileFolderService fileFolderService;
+	protected NodeService nodeService;
+	protected CheckOutCheckInService checkOutCheckInService;
 
 	/**
 	 * The executor command performs the actual transformation
 	 */
-	private RuntimeExec executer;
+	protected RuntimeExec executer;
 
 	/**
 	 * The check command is used to confirm that tesseract is actually installed
 	 * and functioning correctly. This is essentially based upon exit code. See
 	 * the <i>test</i> method for further details
 	 */
-	private RuntimeExec checkCommand;
+	protected RuntimeExec checkCommand;
 
 	// Injected
-	private MimetypeService mimetypeService;
+	protected MimetypeService mimetypeService;
 
-	private boolean available = true;
-	private Date lastChecked = new Date(0l);
-	private int checkFrequencyInSeconds = 120;
+	protected boolean available = true;
+	protected Date lastChecked = new Date(0l);
+	protected int checkFrequencyInSeconds = 120;
+	
+	protected static final String VAR_SOURCE = "source";
+	protected static final String VAR_TARGET = "target";
+	protected static final String VAR_LANG = "language";
+	protected static final String VAR_SOURCE_EXT = "source_extension";
 
 	public void setCheckFrequencyInSeconds(int frequency) {
 		checkFrequencyInSeconds = frequency;
 	}
-
+	
 	/**
 	 * Is the transformer available for use? If at least
 	 * [checkFrequencyInSeconds] seconds have elapsed since the last time the
@@ -123,8 +86,8 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 	public void setMimetypeService(MimetypeService ms) {
 		mimetypeService = ms;
 	}
-
-	/**
+	
+	/*
 	 * Set the execution timeout. A given transform will only be allocated this
 	 * amount of time to run, and will be marked as failed if it takes longer,
 	 * even if the transform would ultimatley succeed. Note that Tesseract
@@ -146,6 +109,26 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 	public void setCheckCommand(RuntimeExec checkCommand) {
 		this.checkCommand = checkCommand;
 	}
+	
+	
+	@Override
+	protected void executeImpl(Action action, NodeRef actionedUponNodeRef) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public void setFileFolderService(FileFolderService fileFolderService) {
+		this.fileFolderService = fileFolderService;
+	}
+
+	public void setCheckOutCheckInService(
+			CheckOutCheckInService checkOutCheckinService) {
+		this.checkOutCheckInService = checkOutCheckinService;
+	}
+
+	public void setNodeService(NodeService nodeService) {
+		this.nodeService = nodeService;
+	}
 
 	protected void test() {
 		try {
@@ -161,16 +144,10 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 					+ checkFrequencyInSeconds + " seconds");
 		}
 	}
-
-	@Override
-	protected void addParameterDefinitions(List<ParameterDefinition> paramList) {
-		// paramList.add(new ParameterDefinitionImpl(PARAM_DESTINATION_FOLDER,
-		// DataTypeDefinition.NODE_REF, true,
-		// getParamDisplayLabel(PARAM_DESTINATION_FOLDER)));
-	}
-
-	public void executeImpl(Action ruleAction, NodeRef actionedUponNodeRef) {
-
+	
+	protected void executeOCR(Action ruleAction, NodeRef actionedUponNodeRef, String NAME, String ocrLanguageParam)
+	{
+		logger.debug("Language for OCR is:"+ocrLanguageParam);
 		try {
 
 			ContentData contentData = (ContentData) nodeService.getProperty(
@@ -237,6 +214,8 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 
 				properties.put(VAR_SOURCE, sourceFile.getAbsolutePath());
 				properties.put(VAR_TARGET, targetFile.getAbsolutePath());
+				properties.put(VAR_SOURCE_EXT, sourceExtension);
+				properties.put(VAR_LANG, ocrLanguageParam);
 
 				RuntimeExec.ExecutionResult result = executer.execute(
 						properties, tesseractTimeout);
@@ -267,20 +246,6 @@ public class PDF2PDFTesseractActionExecuter extends ActionExecuterAbstractBase {
 			logger.error("Exception during transform:" + e.getMessage());
 
 		}
-
-	}
-
-	public void setFileFolderService(FileFolderService fileFolderService) {
-		this.fileFolderService = fileFolderService;
-	}
-
-	public void setCheckOutCheckInService(
-			CheckOutCheckInService checkOutCheckinService) {
-		this.checkOutCheckInService = checkOutCheckinService;
-	}
-
-	public void setNodeService(NodeService nodeService) {
-		this.nodeService = nodeService;
 	}
 
 }

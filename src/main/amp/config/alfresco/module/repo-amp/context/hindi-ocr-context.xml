@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
 <beans>
-	<bean id="ocr-pdf"
-		class="com.eisenvault.ocrIntegration.PDF2PDFTesseractActionExecuter"
+	<bean id="Hindi-OCR"
+		class="com.eisenvault.ocrIntegration.HindiOCRActionExecuter"
 		parent="action-executer">
 		<property name="fileFolderService">
 			<ref bean="FileFolderService" />
@@ -25,6 +25,8 @@
 								<value>/opt/ocr/pdf2pdf.sh</value>
 								<value>${source}</value>
 								<value>${target}</value>
+								<value>${source_extension}</value>
+								<value>${language}</value>
 							</list>
 						</entry>
 					</map>
