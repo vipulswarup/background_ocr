@@ -1,0 +1,101 @@
+2015-08-18 11:07:23,481 WARN  [org.alfresco.util.RuntimeSystemPropertiesSetter] [main] Could not find alfresco-jmxrmi.password on classpath
+2015-08-18 11:07:23,681 INFO  [org.alfresco.repo.admin] [main] Using database URL 'jdbc:h2:./alf_data_dev/h2_data/alf_dev;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;MVCC=FALSE;LOCK_MODE=0' with user 'alfresco'.
+2015-08-18 11:07:25,433 INFO  [org.alfresco.repo.admin] [main] Connected to database H2 version 1.4.185 (2015-01-16)
+2015-08-18 11:07:39,265 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2015-08-18 11:07:39,349 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'sysAdmin' subsystem, ID: [sysAdmin, default] complete
+2015-08-18 11:07:39,383 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Ignoring script patch (post-Hibernate): patch.db-V4.2-metadata-query-indexes
+2015-08-18 11:07:51,465 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2015-08-18 11:07:51,565 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted] complete
+2015-08-18 11:07:51,690 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Connecting to database: jdbc:h2:./alf_data_dev/h2_data/alf_dev, UserName=ALFRESCO, H2 JDBC Driver
+2015-08-18 11:07:51,691 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema managed by database dialect org.hibernate.dialect.H2Dialect.
+2015-08-18 11:07:52,279 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] No changes were made to the schema.
+2015-08-18 11:07:52,938 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2015-08-18 11:07:53,188 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1] complete
+2015-08-18 11:07:54,161 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'thirdparty' subsystem, ID: [thirdparty, default]
+2015-08-18 11:07:54,334 ERROR [org.alfresco.repo.content.transform.RuntimeExecutableContentTransformerWorker] [main] Failed to start a runtime executable content transformer: 
+Execution result: 
+   os:         Linux
+   command:    ./bin/pdf2swf -V
+   succeeded:  false
+   exit code:  1
+   out:        
+   err:        Cannot run program "./bin/pdf2swf": error=2, No such file or directory
+2015-08-18 11:07:54,533 ERROR [org.alfresco.repo.content.transform.magick.AbstractImageMagickContentTransformerWorker] [main] ImageMagickContentTransformerWorker not available: 07180001 Failed to perform ImageMagick transformation: 
+Execution result: 
+   os:         Linux
+   command:    ./ImageMagick/bin/convert /tmp/Alfresco/ImageMagickContentTransformerWorker_init_source_34230635439140994.gif /tmp/Alfresco/ImageMagickContentTransformerWorker_init_target_7861954061446647132.png
+   succeeded:  false
+   exit code:  1
+   out:        
+   err:        Cannot run program "./ImageMagick/bin/convert": error=2, No such file or directory
+2015-08-18 11:07:54,534 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'thirdparty' subsystem, ID: [thirdparty, default] complete
+2015-08-18 11:07:54,535 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2015-08-18 11:07:55,122 WARN  [org.alfresco.util.OpenOfficeConnectionTester] [main] An initial OpenOffice connection could not be established.
+2015-08-18 11:07:55,129 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'OOoDirect' subsystem, ID: [OOoDirect, default] complete
+2015-08-18 11:07:55,131 INFO  [org.alfresco.repo.admin.ConfigurationChecker] [main] The Alfresco root data directory ('dir.root') is: alf_data_dev
+2015-08-18 11:07:55,132 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Search' subsystem, ID: [Search, managed, solr4]
+2015-08-18 11:07:55,744 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Search' subsystem, ID: [Search, managed, solr4] complete
+2015-08-18 11:07:55,772 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] Checking for patches to apply ...
+2015-08-18 11:07:56,126 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] No patches were required.
+2015-08-18 11:07:56,153 INFO  [org.alfresco.repo.module.ModuleServiceImpl] [main] Found 1 module(s).
+2015-08-18 11:07:56,182 INFO  [org.alfresco.repo.module.ModuleServiceImpl] [main] Upgrading module 'repo-amp' version 1.0.1508181107 (was 1.0.1508131131).
+2015-08-18 11:07:56,262 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'fileServers' subsystem, ID: [fileServers, default]
+2015-08-18 11:07:56,944 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'fileServers' subsystem, ID: [fileServers, default] complete
+2015-08-18 11:07:56,944 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'imap' subsystem, ID: [imap, default]
+2015-08-18 11:07:57,250 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'imap' subsystem, ID: [imap, default] complete
+2015-08-18 11:07:57,250 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'email' subsystem, ID: [email, outbound]
+2015-08-18 11:07:57,360 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'email' subsystem, ID: [email, outbound] complete
+2015-08-18 11:07:57,360 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'email' subsystem, ID: [email, inbound]
+2015-08-18 11:07:57,461 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'email' subsystem, ID: [email, inbound] complete
+2015-08-18 11:07:57,462 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2015-08-18 11:07:57,482 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Subscriptions' subsystem, ID: [Subscriptions, default] complete
+2015-08-18 11:07:57,502 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Synchronization' subsystem, ID: [Synchronization, default]
+2015-08-18 11:07:57,678 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Synchronization' subsystem, ID: [Synchronization, default] complete
+2015-08-18 11:07:57,764 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Alfresco JVM - v1.8.0_51-b16; maximum heap size 1355.000MB
+2015-08-18 11:07:57,764 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Server Mode :UNKNOWN
+2015-08-18 11:07:57,765 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Alfresco started (Community). Current version: 5.0.0 (d r99759-b2) schema 8,022. Originally installed version: 5.0.0 (d r99759-b2) schema 8,022.
+2015-08-18 11:07:57,775 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2015-08-18 11:07:58,094 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default] complete
+2015-08-18 11:07:58,094 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Replication' subsystem, ID: [Replication, default]
+2015-08-18 11:07:58,115 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Replication' subsystem, ID: [Replication, default] complete
+2015-08-18 11:07:59,605 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 13 Web Scripts (+0 failed), 15 URLs
+2015-08-18 11:07:59,606 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 1 Package Description Documents (+0 failed) 
+2015-08-18 11:07:59,606 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 0 Schema Description Documents (+0 failed) 
+2015-08-18 11:07:59,610 INFO  [org.springframework.extensions.webscripts.AbstractRuntimeContainer] [main] Initialised Spring Web Scripts Container Web Script Container (in 148.60094ms)
+2015-08-18 11:07:59,660 INFO  [org.springframework.extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+2015-08-18 11:07:59,668 INFO  [org.springframework.extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+2015-08-18 11:07:59,797 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'Replication' subsystem, ID: [Replication, default]
+2015-08-18 11:07:59,803 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'Replication' subsystem, ID: [Replication, default]
+2015-08-18 11:07:59,843 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2015-08-18 11:07:59,846 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2015-08-18 11:07:59,847 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'email' subsystem, ID: [email, inbound]
+2015-08-18 11:07:59,849 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'email' subsystem, ID: [email, inbound]
+2015-08-18 11:07:59,850 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'fileServers' subsystem, ID: [fileServers, default]
+2015-08-18 11:07:59,854 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'fileServers' subsystem, ID: [fileServers, default]
+2015-08-18 11:07:59,861 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2015-08-18 11:07:59,866 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2015-08-18 11:07:59,867 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-34] Invocation of destroy method 'close' failed on bean with name 'solrSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-18 11:07:59,868 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-34] Invocation of destroy method 'close' failed on bean with name 'activitiesSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-18 11:07:59,870 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2015-08-18 11:07:59,873 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2015-08-18 11:07:59,873 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2015-08-18 11:07:59,876 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2015-08-18 11:07:59,877 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'Synchronization' subsystem, ID: [Synchronization, default]
+2015-08-18 11:07:59,879 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'Synchronization' subsystem, ID: [Synchronization, default]
+2015-08-18 11:07:59,881 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'email' subsystem, ID: [email, outbound]
+2015-08-18 11:07:59,882 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'email' subsystem, ID: [email, outbound]
+2015-08-18 11:07:59,886 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'imap' subsystem, ID: [imap, default]
+2015-08-18 11:07:59,888 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'imap' subsystem, ID: [imap, default]
+2015-08-18 11:08:00,233 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'Search' subsystem, ID: [Search, managed, solr4]
+2015-08-18 11:08:00,367 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'Search' subsystem, ID: [Search, managed, solr4]
+2015-08-18 11:08:00,437 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-34] Invocation of destroy method 'close' failed on bean with name 'locksSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-18 11:08:00,440 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-34] Invocation of destroy method 'close' failed on bean with name 'propertyValueSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-18 11:08:00,440 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'thirdparty' subsystem, ID: [thirdparty, default]
+2015-08-18 11:08:00,443 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'thirdparty' subsystem, ID: [thirdparty, default]
+2015-08-18 11:08:00,445 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-34] Invocation of destroy method 'close' failed on bean with name 'auditSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-18 11:08:00,446 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2015-08-18 11:08:00,448 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2015-08-18 11:08:00,449 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-34] Invocation of destroy method 'close' failed on bean with name 'contentSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2015-08-18 11:08:00,449 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopping 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2015-08-18 11:08:00,450 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-34] Stopped 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2015-08-18 11:08:00,453 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-34] Invocation of destroy method 'close' failed on bean with name 'repoSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession

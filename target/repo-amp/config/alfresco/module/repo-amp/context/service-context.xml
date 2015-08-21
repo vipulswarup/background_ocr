@@ -25,6 +25,7 @@
 			<list>
 				<!-- Content models -->
 				<value>alfresco/module/repo-amp/model/evHealthCareDocModel.xml</value>
+				<value>alfresco/module/repo-amp/model/empfileModel.xml</value>
 			</list>
 		</property>
 	</bean>
