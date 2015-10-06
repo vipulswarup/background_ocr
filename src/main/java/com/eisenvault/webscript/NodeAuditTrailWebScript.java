@@ -205,7 +205,7 @@ public class NodeAuditTrailWebScript extends DeclarativeWebScript {
         public String getAuditMethod()
         {
         	if(this.values.get("/alfresco-access/transaction/action").equals("updateNodeProperties")){
-        		return "UPDATE NODE PROPERTIES";
+        		return "PROPERTIES UPDATED";
         	}else if(this.values.get("/alfresco-access/transaction/action").equals("readContent")){
         		return "READ CONTENT";
         	}
