@@ -1,35 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Definition of new Model -->
-<model name="cm:empfilemodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
-    <!-- Optional meta-data about the model -->
-    <description>Employee File Model</description>
-  <author>Shikha</author>
-  <version>1.0</version>
-  <imports>
-     <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
-     <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
-  </imports>
+
+<!-- Custom Model -->
+
+<!-- Note: This model is pre-configured to load at startup of the Repository.  So, all custom -->
+<!--       types and aspects added here will automatically be registered -->
+
+<model name="empfm:empfileModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+   <!-- Optional meta-data about the model -->   
+   <description>Custom Model</description>
+   <author></author>
+   <version>1.0</version>
+
+   <imports>
+   	  <!-- Import Alfresco Dictionary Definitions -->
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+      <!-- Import Alfresco Content Domain Model Definitions -->
+      <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+   </imports>
+
    <!-- Introduction of new namespaces defined by this model -->
-    <namespaces>
-        <namespace uri="http://www.someco.com/model/content/1.0" prefix="sc" />
-    </namespaces>
+   <!-- NOTE: The following namespace custom.model should be changed to reflect your own namespace -->
+   <namespaces>
+      <namespace uri="custom.model" prefix="empfm"/>
+   </namespaces>
+      
+
   <types>   
- <type name="sc:empdoc">
+ <type name="empfm:empdoc">
             <title>Employee Document</title>
             <parent>cm:content</parent>
             <properties>
-        	<property name="sc:EmployeeName">
+        	<property name="empfm:EmployeeName">
         		<title>Employee Name</title>
         		<description>Name of the microarray project</description>
         		<type>d:text</type>
         		
         	</property>
-        	<property name="sc:EmployeeId">
+        	<property name="empfm:EmployeeId">
         		<title>Employee Id</title>
         		<description>Employee Id</description>
         		<type>d:text</type>
         	</property>
-        	<property name="sc:UID">
+        	<property name="empfm:UID">
         		<title>Unique File Identifier</title>
         		<description>Department Name</description>
         		<type>d:text</type>
@@ -37,11 +50,11 @@
           </properties>
         </type>
 
- <type name="sc:resume">
+ <type name="empfm:resume">
             <title>Resume</title>
-            <parent>sc:empdoc</parent>
+            <parent>empfm:empdoc</parent>
             <properties>
-               <property name="sc:DateReceived1">
+               <property name="empfm:DateReceived1">
         		<title>Date Received</title>
         		<description>Date Received</description>
         		<type>d:date</type>
@@ -49,11 +62,11 @@
             </properties>
         </type>
 
-<type name="sc:pf2">
+<type name="empfm:pf2">
             <title>Provident Fund Form 2</title>
-            <parent>sc:empdoc</parent>
+            <parent>empfm:empdoc</parent>
             <properties>
-               <property name="sc:DateReceived">
+               <property name="empfm:DateReceived">
         		<title>Date Received</title>
         		<description>Date Received</description>
         		<type>d:date</type>
@@ -62,11 +75,11 @@
         </type>
 
 
-<type name="sc:pf10">
+<type name="empfm:pf10">
             <title>Provident Fund Form 10</title>
-            <parent>sc:empdoc</parent>
+            <parent>empfm:empdoc</parent>
             <properties>
-               <property name="sc:datefiled">
+               <property name="empfm:datefiled">
         		<title>Date Filed</title>
         		<description>Date Filed</description>
         		<type>d:date</type>
@@ -74,16 +87,16 @@
             </properties>
         </type>
 
-<type name="sc:esicform">
+<type name="empfm:esicform">
             <title>ESIC FORM</title>
-            <parent>sc:empdoc</parent>
+            <parent>empfm:empdoc</parent>
             <properties>
-               <property name="sc:esicno">
+               <property name="empfm:esicno">
         		<title>ESIC NUMBER</title>
         		<description>ESIC NUMBER</description>
         		<type>d:text</type>
         	</property>
-		<property name="sc:nominees">
+		<property name="empfm:nominees">
         		<title>NAME OF NOMINEES</title>
         		<description>NAME OF NOMINEES</description>
         		<type>d:text</type>
@@ -91,67 +104,69 @@
             </properties>
         </type>
 
-     <type name="sc:empfile">
+     <type name="empfm:empfile">
         <title>Employee File</title>
         <parent>cm:folder</parent>
           	 <properties>
-        	<property name="sc:EmployeeFile">
+        	<property name="empfm:EmployeeFile">
         		<title>Employee Name</title>
         		<description>Name of the microarray project</description>
         		<type>d:text</type>
         		
         	</property>
-        	<property name="sc:EmployeeId1">
+        	<property name="empfm:EmployeeId1">
         		<title>Employee Id</title>
         		<description>Employee Id</description>
         		<type>d:text</type>
         		
         	</property>
-        	<property name="sc:DeptName">
+        	<property name="empfm:DeptName">
         		<title>Department Name</title>
         		<description>Department Name</description>
         		<type>d:text</type>
         		
         	</property>
-              	<property name="sc:MgrName">
+              	<property name="empfm:MgrName">
         		<title>Manager Name</title>
         		<description>Manager Name</description>
         		<type>d:text</type>
         		
         	</property>
-             	<property name="sc:MgrId">
+             	<property name="empfm:MgrId">
         	        <title>Manager ID</title>
                        <description>Manager ID</description>
                        <type>d:text</type>
                        
                 </property>
-		<property name="sc:DOJ">
+		<property name="empfm:DOJ">
         	        <title>Date of Joining</title>
                        <description>Date of Joining</description>
                        <type>d:date</type>
                        
                 </property>
-		<property name="sc:DOL">
+		<property name="empfm:DOL">
         	        <title>Date of Leaving</title>
                        <description>Date of Leaving</description>
                        <type>d:date</type>
                        
                 </property>
-		<property name="sc:UFI">
+		<property name="empfm:UFI">
         	        <title>Unique File Identifier</title>
                        <description>Unique File Identifier</description>
                        <type>d:text</type>                       
                 </property>
-		<property name="sc:alltypes">
+		<property name="empfm:alltypes">
         		<title>All Types</title>
         		<description>Update count when all types are present</description>
-        		<type>d:int</type>        		
+        		<type>d:int</type> 
+			<default>1</default>       		
         	</property>
 
-		<property name="sc:alltypetext">
+		<property name="empfm:alltypetext">
         		<title>Types Present</title>
         		<description>Types Present in folder</description>
-        		<type>d:text</type>        		
+        		<type>d:text</type>        	
+			<default>defaultValue</default>	
         	</property>
           </properties>
      </type>
