@@ -33,7 +33,7 @@ import com.tradeshift.test.remote.RemoteTestRunner;
  * @author Gabriele Columbro 
  * @author Maurizio Pillitu
  *
- */
+ 
 
 @RunWith(RemoteTestRunner.class)
 @Remote(runnerClass=SpringJUnit4ClassRunner.class)
@@ -64,3 +64,5 @@ public class EvExtensionTest {
     }
 
 }
+
+*/
