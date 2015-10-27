@@ -2,44 +2,65 @@
 
 <!-- Definition of new Model -->
 
-<!-- The important part here is the name - Note: the use of the ev: namespace which is defined further on in the document -->
+<!-- The important part here is the name - Note: the use of the ev: namespace 
+	which is defined further on in the document -->
 <model name="ev:evdocmodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
 
-	<!-- Optional meta-data about the model -->   
+	<!-- Optional meta-data about the model -->
 	<description>EisenVault Document Model</description>
 	<author>EisenVault DMS Team</author>
 	<version>1.0</version>
 
-	<!-- Imports are required to allow references to definitions in other models -->   
+	<!-- Imports are required to allow references to definitions in other models -->
+
 	<imports>
 		<!-- Import Alfresco Dictionary Definitions -->
-		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0"
+			prefix="d" />
 		<!-- Import Alfresco Content Domain Model Definitions -->
-		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
 	</imports>
 
 	<!-- Introduction of new namespaces defined by this model -->
 	<namespaces>
-		<namespace uri="http://www.eisenvault.net/model/content/1.0" prefix="ev"/>
+		<namespace uri="http://www.eisenvault.net/model/content/1.0"
+			prefix="ev" />
 	</namespaces>
-	
-	
+
+
 	<constraints>
 		<constraint name="ev:alphaNumericConstraint" type="REGEX">
-			<parameter name="expression"><value>[a-zA-Z0-9]*</value></parameter>
-			<parameter name="requiresMatch"><value>true</value></parameter>
+			<parameter name="expression">
+				<value>[a-zA-Z0-9]*</value>
+			</parameter>
+			<parameter name="requiresMatch">
+				<value>true</value>
+			</parameter>
 		</constraint>
 		<constraint name="ev:maxLengthOfSixConstraint" type="LENGTH">
-			<parameter name="minLength"><value>0</value></parameter>
-			<parameter name="maxLength"><value>6</value></parameter>
+			<parameter name="minLength">
+				<value>0</value>
+			</parameter>
+			<parameter name="maxLength">
+				<value>6</value>
+			</parameter>
 		</constraint>
 		<constraint name="ev:maxLengthOfTwelveConstraint" type="LENGTH">
-			<parameter name="minLength"><value>0</value></parameter>
-			<parameter name="maxLength"><value>12</value></parameter>
+			<parameter name="minLength">
+				<value>0</value>
+			</parameter>
+			<parameter name="maxLength">
+				<value>12</value>
+			</parameter>
 		</constraint>
-		<constraint name="ev:maxLengthOfOneTwentyEightConstraint" type="LENGTH">
-			<parameter name="minLength"><value>0</value></parameter>
-			<parameter name="maxLength"><value>128</value></parameter>
+		<constraint name="ev:maxLengthOfOneTwentyEightConstraint"
+			type="LENGTH">
+			<parameter name="minLength">
+				<value>0</value>
+			</parameter>
+			<parameter name="maxLength">
+				<value>128</value>
+			</parameter>
 		</constraint>
 		<constraint name="ev:modeOfPaymentConstraint" type="LIST">
 			<parameter name="allowedValues">
@@ -68,9 +89,9 @@
 			</parameter>
 		</constraint>
 	</constraints>
-  
+
 	<types>
-		<!--  Enterprise-wide generic document type -->
+		<!-- Enterprise-wide generic document type -->
 		<type name="ev:doc">
 			<title>EisenVault Health Care Document</title>
 			<parent>cm:content</parent>
@@ -92,7 +113,7 @@
 						<constraint ref="ev:maxLengthOfTwelveConstraint" />
 					</constraints>
 				</property>
-			
+
 				<!-- Date Properties -->
 				<property name="ev:dateOfAdmission">
 					<title>Date of Admission</title>
@@ -114,7 +135,7 @@
 						<constraint ref="ev:maxLengthOfOneTwentyEightConstraint" />
 					</constraints>
 				</property>
-	
+
 				<!-- List Properties -->
 				<property name="ev:modeOfPayment">
 					<title>Mode of Payment</title>
@@ -132,7 +153,7 @@
 						<constraint ref="ev:typeOfDiseaseConstraint" />
 					</constraints>
 				</property>
-			
+
 				<!-- Physical Filing Properties -->
 				<property name="ev:barcodeNumber">
 					<title>Barcode Number</title>
@@ -162,8 +183,151 @@
 					</constraints>
 				</property>
 			</properties>
-			
+
+		</type>
+		<type name="ev:empdoc">
+			<title>Employee Document</title>
+			<parent>cm:content</parent>
+			<properties>
+				<property name="ev:EmployeeName">
+					<title>Employee Name</title>
+					<description>Name of the Employee</description>
+					<type>d:text</type>
+
+				</property>
+				<property name="ev:EmployeeId">
+					<title>Employee Id</title>
+					<description>Employee Id</description>
+					<type>d:text</type>
+				</property>
+				<property name="ev:UID">
+					<title>Unique File Identifier</title>
+					<description>Department Name</description>
+					<type>d:text</type>
+				</property>
+			</properties>
+		</type>
+
+		<type name="ev:resume">
+			<title>Resume</title>
+			<parent>ev:empdoc</parent>
+			<properties>
+				<property name="ev:DateReceived1">
+					<title>Date Received</title>
+					<description>Date Received</description>
+					<type>d:date</type>
+				</property>
+			</properties>
+		</type>
+
+		<type name="ev:pf2">
+			<title>Provident Fund Form 2</title>
+			<parent>ev:empdoc</parent>
+			<properties>
+				<property name="ev:DateReceived">
+					<title>Date Received</title>
+					<description>Date Received</description>
+					<type>d:date</type>
+				</property>
+			</properties>
+		</type>
+
+
+		<type name="ev:pf10">
+			<title>Provident Fund Form 10</title>
+			<parent>ev:empdoc</parent>
+			<properties>
+				<property name="ev:datefiled">
+					<title>Date Filed</title>
+					<description>Date Filed</description>
+					<type>d:date</type>
+				</property>
+			</properties>
+		</type>
+
+		<type name="ev:esicform">
+			<title>ESIC FORM</title>
+			<parent>ev:empdoc</parent>
+			<properties>
+				<property name="ev:esicno">
+					<title>ESIC NUMBER</title>
+					<description>ESIC NUMBER</description>
+					<type>d:text</type>
+				</property>
+				<property name="ev:nominees">
+					<title>NAME OF NOMINEES</title>
+					<description>NAME OF NOMINEES</description>
+					<type>d:text</type>
+				</property>
+			</properties>
+		</type>
+
+		<type name="ev:empfile">
+			<title>Employee File</title>
+			<parent>cm:folder</parent>
+			<properties>
+				<property name="ev:EmployeeFile">
+					<title>Employee Name</title>
+					<description>Name of the microarray project</description>
+					<type>d:text</type>
+
+				</property>
+				<property name="ev:EmployeeId1">
+					<title>Employee Id</title>
+					<description>Employee Id</description>
+					<type>d:text</type>
+
+				</property>
+				<property name="ev:DeptName">
+					<title>Department Name</title>
+					<description>Department Name</description>
+					<type>d:text</type>
+
+				</property>
+				<property name="ev:MgrName">
+					<title>Manager Name</title>
+					<description>Manager Name</description>
+					<type>d:text</type>
+
+				</property>
+				<property name="ev:MgrId">
+					<title>Manager ID</title>
+					<description>Manager ID</description>
+					<type>d:text</type>
+
+				</property>
+				<property name="ev:DOJ">
+					<title>Date of Joining</title>
+					<description>Date of Joining</description>
+					<type>d:date</type>
+
+				</property>
+				<property name="ev:DOL">
+					<title>Date of Leaving</title>
+					<description>Date of Leaving</description>
+					<type>d:date</type>
+
+				</property>
+				<property name="ev:UFI">
+					<title>Unique File Identifier</title>
+					<description>Unique File Identifier</description>
+					<type>d:text</type>
+				</property>
+				<property name="ev:alltypes">
+					<title>All Types</title>
+					<description>Update count when all types are present</description>
+					<type>d:int</type>
+					<default>1</default>
+				</property>
+
+				<property name="ev:alltypetext">
+					<title>Types Present</title>
+					<description>Types Present in folder</description>
+					<type>d:text</type>
+					<default>defaultValue</default>
+				</property>
+			</properties>
 		</type>
 	</types>
-	
+
 </model>
