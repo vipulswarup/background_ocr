@@ -18,6 +18,7 @@
 			<list>
 				<!-- Content models -->
 				<value>alfresco/module/${project.artifactId}/model/evHealthCareDocModel.xml</value>
+				<value>alfresco/module/${project.artifactId}/model/customer-dl-model.xml</value>
 			</list>
 		</property>
 	</bean>
