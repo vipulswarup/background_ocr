@@ -16,4 +16,7 @@
 			<ref bean="NamespaceService" />
 		</property>
 	</bean>
+	<bean id="webscript.com.eisenvault.picklist.picklist.get" class="com.eisenvault.webscript.PicklistWebScript" parent="webscript">
+		  <property name="serviceRegistry" ref="ServiceRegistry" />
+	</bean>	
 </beans>

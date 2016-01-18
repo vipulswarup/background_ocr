@@ -20,8 +20,19 @@
         <namespace uri="http://www.mycompany.com/model/content/1.0" prefix="myc"/>
     </namespaces>
 
-    <!-- ===============================================================================================================
-        Constraints, Types, and Aspects go here...
-        -->
+	<aspects>
+		<aspect name="myc:test">
+			<title>Test Aspect</title>
+			<properties>
+				<property name="myc:customer">
+					<title>Customer</title>
+					<type>d:text</type>
+					<index enabled="true">
+						<tokenised>false</tokenised>
+					</index>
+				</property>
+			</properties>
+		</aspect>
+	</aspects>
 
 </model>

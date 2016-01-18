@@ -17,7 +17,7 @@
 		<property name="models">
 			<list>
 				<!-- Content models -->
-				<value>alfresco/module/${project.artifactId}/model/evHealthCareDocModel.xml</value>
+				<value>alfresco/module/${project.artifactId}/model/customer-dl-model.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -26,7 +26,7 @@
 		depends-on="resourceBundles">
 		<property name="labels">
 			<list>
-				<value>alfresco/messages/evHealthCareDocModel</value>
+				<value>alfresco/messages/evContentModel</value>
 			</list>
 		</property>
 	</bean>
