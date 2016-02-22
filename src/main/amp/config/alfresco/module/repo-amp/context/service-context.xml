@@ -18,6 +18,7 @@
 			<list>
 				<!-- Content models -->
 				<value>alfresco/module/${project.artifactId}/model/customer-dl-model.xml</value>
+				<value>alfresco/module/${project.artifactId}/model/eisenvault-content-model.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -79,5 +80,14 @@
 			</value>
 		</property>
 	</bean>
-
+	<bean id="${project.artifactId}_documentPropertyGenerator" class="com.eisenvault.helpers.behaviors.SysDBIdGenerator"
+		depends-on="dictionaryBootstrap"
+		init-method="init">
+		<property name="nodeService">
+			<ref bean="nodeService" />
+		</property>
+		<property name="policyComponent">
+			<ref bean="policyComponent" />
+		</property>
+	</bean>
 </beans>
