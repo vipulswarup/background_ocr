@@ -21,7 +21,8 @@ import com.eisenvault.repo.model.EisenvaultDocModel;
 
 public class SysDBIdGenerator implements
 		NodeServicePolicies.OnCreateNodePolicy,
-		NodeServicePolicies.OnUpdatePropertiesPolicy {
+		NodeServicePolicies.OnUpdatePropertiesPolicy,
+		NodeServicePolicies.BeforeSetNodeTypePolicy {
 
 	// Dependencies
 	private NodeService nodeService;
@@ -30,6 +31,7 @@ public class SysDBIdGenerator implements
 	// Behaviours
 	private Behaviour onCreateNode;
 	private Behaviour onUpdateProperties;
+	private Behaviour beforeSetNodeType;
 
 	private Logger logger = Logger.getLogger(SysDBIdGenerator.class);
 
@@ -43,17 +45,25 @@ public class SysDBIdGenerator implements
 
 		this.onUpdateProperties = new JavaBehaviour(this, "onUpdateProperties",
 				NotificationFrequency.EVERY_EVENT);
+		
+		this.beforeSetNodeType = new JavaBehaviour(this, "beforeSetNodeType",
+				NotificationFrequency.EVERY_EVENT);
 
 		// Bind behaviours to node policies
 		this.policyComponent.bindClassBehaviour(QName.createQName(
 				NamespaceService.ALFRESCO_URI, "onCreateNode"),
-				EisenvaultDocModel.TYPE_EISENVAULT_DOC,
-				this.onCreateNode);
+				EisenvaultDocModel.TYPE_EISENVAULT_DOC, this.onCreateNode);
 
+		this.policyComponent
+				.bindClassBehaviour(QName.createQName(
+						NamespaceService.ALFRESCO_URI, "onUpdateProperties"),
+						EisenvaultDocModel.TYPE_EISENVAULT_DOC,
+						this.onUpdateProperties);
+		
 		this.policyComponent.bindClassBehaviour(QName.createQName(
-				NamespaceService.ALFRESCO_URI, "onUpdateProperties"),
+				NamespaceService.ALFRESCO_URI, "beforeSetNodeType"),
 				EisenvaultDocModel.TYPE_EISENVAULT_DOC,
-				this.onUpdateProperties);
+				this.beforeSetNodeType);
 
 	}
 
@@ -72,6 +82,13 @@ public class SysDBIdGenerator implements
 		fetchSysDBId(nodeRef);
 
 	}
+	
+	@Override
+	public void beforeSetNodeType(NodeRef nodeRef, QName oldType, QName newType) {
+		if (logger.isDebugEnabled())
+			logger.debug("Inside beforeSetNodeType");
+		fetchSysDBId(nodeRef);
+	}
 
 	/**
 	 * 
@@ -88,8 +105,8 @@ public class SysDBIdGenerator implements
 		String serialNumber = "EV"
 				+ nodeService.getProperty(nodeRef, ContentModel.PROP_NODE_DBID);
 
-		nodeService.setProperty(nodeRef,
-				EisenvaultDocModel.PROP_SERIAL_NUMBER, serialNumber);
+		nodeService.setProperty(nodeRef, EisenvaultDocModel.PROP_SERIAL_NUMBER,
+				serialNumber);
 
 	}
 
