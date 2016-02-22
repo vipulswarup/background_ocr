@@ -31,7 +31,7 @@
 		<!-- Constraint on year -->
 		<constraint name="ev:yearConstraint" type="LENGTH">
 			<parameter name="minLength">
-				<value>4</value>
+				<value>0</value>
 			</parameter>
 			<parameter name="maxLength">
 				<value>4</value>
