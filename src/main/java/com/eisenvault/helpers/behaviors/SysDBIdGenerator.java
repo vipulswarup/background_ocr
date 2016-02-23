@@ -22,7 +22,7 @@ import com.eisenvault.repo.model.EisenvaultDocModel;
 public class SysDBIdGenerator implements
 		NodeServicePolicies.OnCreateNodePolicy,
 		NodeServicePolicies.OnUpdatePropertiesPolicy,
-		NodeServicePolicies.BeforeSetNodeTypePolicy {
+		NodeServicePolicies.OnSetNodeTypePolicy {
 
 	// Dependencies
 	private NodeService nodeService;
@@ -31,7 +31,7 @@ public class SysDBIdGenerator implements
 	// Behaviours
 	private Behaviour onCreateNode;
 	private Behaviour onUpdateProperties;
-	private Behaviour beforeSetNodeType;
+	private Behaviour onSetNodeType;
 
 	private Logger logger = Logger.getLogger(SysDBIdGenerator.class);
 
@@ -46,7 +46,7 @@ public class SysDBIdGenerator implements
 		this.onUpdateProperties = new JavaBehaviour(this, "onUpdateProperties",
 				NotificationFrequency.EVERY_EVENT);
 		
-		this.beforeSetNodeType = new JavaBehaviour(this, "beforeSetNodeType",
+		this.onSetNodeType = new JavaBehaviour(this, "onSetNodeType",
 				NotificationFrequency.EVERY_EVENT);
 
 		// Bind behaviours to node policies
@@ -61,9 +61,9 @@ public class SysDBIdGenerator implements
 						this.onUpdateProperties);
 		
 		this.policyComponent.bindClassBehaviour(QName.createQName(
-				NamespaceService.ALFRESCO_URI, "beforeSetNodeType"),
+				NamespaceService.ALFRESCO_URI, "onSetNodeType"),
 				EisenvaultDocModel.TYPE_EISENVAULT_DOC,
-				this.beforeSetNodeType);
+				this.onSetNodeType);
 
 	}
 
@@ -84,15 +84,15 @@ public class SysDBIdGenerator implements
 	}
 	
 	@Override
-	public void beforeSetNodeType(NodeRef nodeRef, QName oldType, QName newType) {
+	public void onSetNodeType(NodeRef nodeRef, QName oldType, QName newType) {
 		if (logger.isDebugEnabled())
-			logger.debug("Inside beforeSetNodeType");
+			logger.debug("Inside onSetNodeType");
 		fetchSysDBId(nodeRef);
 	}
 
 	/**
 	 * 
-	 * Method used for generating the evgb:goyalBrotherDocument type fields
+	 * Method used for generating the ev:eisenvaultDoc; ev:serialNumber field
 	 * 
 	 * @param nodeRef
 	 *            nodeRef of the node
