@@ -64,7 +64,6 @@ public class SysDBIdGenerator implements
 				NamespaceService.ALFRESCO_URI, "onSetNodeType"),
 				EisenvaultDocModel.TYPE_EISENVAULT_DOC,
 				this.onSetNodeType);
-
 	}
 
 	@Override
