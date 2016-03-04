@@ -70,7 +70,7 @@
 				<!-- Year of the Document -->
 				<property name="ev:yearOfCreation">
 					<title>Document Year</title>
-					<type>d:long</type>
+					<type>d:text</type>
 					<multiple>false</multiple>
 					<constraints>
 						<constraint ref="ev:yearConstraint" />
