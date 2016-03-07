@@ -27,6 +27,6 @@
 		resource="classpath:alfresco/module/${project.artifactId}/context/service-context.xml" />
 	<import
 		resource="classpath:alfresco/module/${project.artifactId}/context/webscript-context.xml" />
-	<import resource="classpath:alfresco/module/ev-education-repo/context/permissions-context.xml" />
+	<import resource="classpath:alfresco/module/${project.artifactId}/context/permissions-context.xml" />
 
 </beans>
