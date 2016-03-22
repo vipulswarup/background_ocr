@@ -8,6 +8,12 @@
 			"application":"${t.applicationName}",
 			"method":"${t.applicationMethod}",
 			"time":"${xmldate(t.date)}",
+			"propertyList":
+			[
+			<#list t.propertiesUpdate as propertyList>
+  				"${propertyList}"<#if propertyList_has_next>,</#if>
+			</#list>
+			],
 			"values":
 			<#if t.auditValues??>
 			{

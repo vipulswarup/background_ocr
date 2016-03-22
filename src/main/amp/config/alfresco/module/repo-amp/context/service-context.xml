@@ -17,7 +17,6 @@
 		<property name="models">
 			<list>
 				<!-- Content models -->
-				<value>alfresco/module/${project.artifactId}/model/customer-dl-model.xml</value>
 				<value>alfresco/module/${project.artifactId}/model/eisenvault-content-model.xml</value>
 			</list>
 		</property>
