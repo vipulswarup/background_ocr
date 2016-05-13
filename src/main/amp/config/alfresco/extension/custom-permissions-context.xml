@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<beans>
+
+    <bean id="CustomPerm_permissionBootstrap" parent="permissionModelBootstrap">
+		<property name="model"
+			value="alfresco/extension/model/permissionDefinitions.xml" />
+	</bean>
+	<bean id="CustomSitePerm_permissionBootstrap" parent="permissionModelBootstrap">
+		<property name="model"
+			value="alfresco/extension/model/sitePermissionDefinitions.xml" />
+	</bean>
+	<bean id="baseJsonConversionComponent" abstract="true">
+		<property name="nodeService" ref="NodeService" />
+		<property name="publicServiceAccessService" ref="PublicServiceAccessService" />
+		<property name="namespaceService" ref="NamespaceService" />
+		<property name="fileFolderService" ref="FileFolderService" />
+		<property name="lockService" ref="LockService" />
+		<property name="permissionService" ref="PermissionService" />
+		<property name="contentService" ref="ContentService" />
+		<property name="userPermissions">
+			<list>
+				<value>Unlock</value>
+				<value>CancelCheckOut</value>
+				<value>ChangePermissions</value>
+				<value>CreateChildren</value>
+				<value>Delete</value>
+				<value>Write</value>
+				<value>SimpleView</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

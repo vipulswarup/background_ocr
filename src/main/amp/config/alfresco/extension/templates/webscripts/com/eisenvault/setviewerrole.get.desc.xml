@@ -1,0 +1,8 @@
+<webscript>
+  <shortname>Fix Share Roles</shortname>
+  <description>Adds new Viewer role to all existing sites</description>
+  <url>/eisenvault/sites/fixrole</url>
+  <authentication>user</authentication>
+  <format default="">argument</format>
+  <family>Toolkit</family> 
+</webscript>

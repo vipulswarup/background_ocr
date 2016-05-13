@@ -19,4 +19,20 @@
 	<!-- <bean id="webscript.com.eisenvault.picklist.picklist.get" class="com.eisenvault.webscript.PicklistWebScript" parent="webscript">
 		  <property name="serviceRegistry" ref="ServiceRegistry" />
 	</bean>	 -->
+	
+	<bean id="webscript.com.eisenvault.setviewerrole.get" class="com.eisenvault.webscript.ViewerRoleCreation"
+		parent="webscript">
+
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="searchService" ref="SearchService" />
+		<property name="nodeService" ref="NodeService" />
+		<property name="authorityService" ref="AuthorityService" />
+
+		<!-- Custom role SiteCollaboratorPlus -->
+		<property name="authorityName">
+			<value>GROUP_site_:SITE_SiteViewer</value>
+		</property>
+
+	</bean>
+	
 </beans>
