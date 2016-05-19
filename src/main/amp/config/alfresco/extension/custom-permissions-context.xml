@@ -4,9 +4,24 @@
 
 <beans>
 
-    <bean id="CustomPerm_permissionBootstrap" parent="permissionModelBootstrap">
+    <!-- <bean id="CustomPerm_permissionBootstrap" parent="permissionModelBootstrap">
 		<property name="model"
 			value="alfresco/extension/model/permissionDefinitions.xml" />
+	</bean> -->
+	<bean id='permissionsModelDAO'
+		class="org.alfresco.repo.security.permissions.impl.model.PermissionModel" init-method="init">
+        <property name="model">
+			<value>alfresco/extension/model/permissionDefinitions.xml</value>
+        </property>
+        <property name="dtdSchema">
+   			<value>alfresco/model/permissionSchema.dtd</value>
+  		</property>
+        <property name="nodeService">
+            <ref bean="nodeService" />
+        </property>
+        <property name="dictionaryService">
+            <ref bean="dictionaryService" />
+        </property>
 	</bean>
 	<bean id="CustomSitePerm_permissionBootstrap" parent="permissionModelBootstrap">
 		<property name="model"
