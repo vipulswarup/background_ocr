@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+<beans>
+<bean id="HindiOcr-Folder"
+		class="com.eisenvault.ocrIntegration.HindiFolderActionExecuter"
+		parent="action-executer">
+		<property name="fileFolderService">
+			<ref bean="FileFolderService" />
+		</property>
+		<property name="checkOutCheckInService">
+			<ref bean="CheckOutCheckInService" />
+		</property>
+		<property name="mimetypeService">
+			<ref bean="MimetypeService" />
+		</property>
+		<property name="nodeService">
+			<ref bean="NodeService" />
+		</property>
+		<property name="executer">
+			<bean name="transformer.Tesseract.Command" class="org.alfresco.util.exec.RuntimeExec">
+				<property name="commandsAndArguments">
+					<map>
+						<entry key=".*">
+							<list>
+								<value>/opt/ocr/pdf2pdf.sh</value>
+								<value>${source}</value>
+								<value>${target}</value>
+								<value>${source_extension}</value>
+								<value>${language}</value>
+							</list>
+						</entry>
+					</map>
+				</property>
+			</bean>
+		</property>
+		<property name="checkCommand">
+			<bean name="transformer.Tesseract.CheckCommand" class="org.alfresco.util.exec.RuntimeExec">
+				<property name="commandsAndArguments">
+					<map>
+						<entry key=".*">
+							<list>
+								<value>/usr/bin/tesseract</value>
+								<value>-v</value>
+							</list>
+						</entry>
+					</map>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	</beans>
